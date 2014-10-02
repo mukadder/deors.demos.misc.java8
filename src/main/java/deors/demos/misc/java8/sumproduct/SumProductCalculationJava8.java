@@ -1,4 +1,4 @@
-package deors.demos.java8.sumproduct;
+package deors.demos.misc.java8.sumproduct;
 
 import java.util.ArrayList;
 import java.util.List;

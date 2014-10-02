@@ -1,4 +1,4 @@
-package deors.demos.java8.datelist;
+package deors.demos.misc.java8.datelist;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

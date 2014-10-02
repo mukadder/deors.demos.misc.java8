@@ -1,11 +1,11 @@
-package deors.demos.java8.filters;
+package deors.demos.misc.java8.filters;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import deors.demos.java8.filters.Person.Gender;
-import deors.demos.java8.filters.Person.Region;
+import deors.demos.misc.java8.filters.Person.Gender;
+import deors.demos.misc.java8.filters.Person.Region;
 
 public class PersonFilters {
 

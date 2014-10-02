@@ -1,4 +1,4 @@
-package deors.demos.java8;
+package deors.demos.misc.java8;
 
 import static org.junit.Assert.assertEquals;
 
