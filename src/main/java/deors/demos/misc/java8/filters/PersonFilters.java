@@ -3,11 +3,21 @@ package deors.demos.misc.java8.filters;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import deors.demos.misc.java8.filters.Person.Gender;
 import deors.demos.misc.java8.filters.Person.Region;
 
 public class PersonFilters {
+
+    static String result1;
+    static String result2;
+    static Optional<Person> result3;
+
+    private PersonFilters() {
+        super();
+    }
 
     public static void main(String[] args) {
 
@@ -17,6 +27,10 @@ public class PersonFilters {
         persons.stream().
             filter(p -> p.birthDate.isBefore(LocalDate.now().minusYears(40))).
             forEach(System.out::println);
+        result1 = persons.stream().
+            filter(p -> p.birthDate.isBefore(LocalDate.now().minusYears(40))).
+            map(p -> p.toString()).
+            collect(Collectors.joining(","));
 
         System.out.println();
         System.out.println("select males born in second half of year");
@@ -24,6 +38,11 @@ public class PersonFilters {
             filter(p -> p.gender == Gender.MALE).
             filter(p -> p.birthDate.getMonthValue() > 6).
             forEach(System.out::println);
+        result2 = persons.stream().
+            filter(p -> p.gender == Gender.MALE).
+            filter(p -> p.birthDate.getMonthValue() > 6).
+            map(p -> p.toString()).
+            collect(Collectors.joining(","));
 
         System.out.println();
         System.out.println("select the largest salary for people in LATAM with last name starting with R");
@@ -32,6 +51,10 @@ public class PersonFilters {
             filter(p -> p.last.startsWith("R")).
             max((p, p2) -> p.salary - p2.salary).
             ifPresent(System.out::println);
+        result3 = persons.stream().
+            filter(p -> p.region == Region.LATAM).
+            filter(p -> p.last.startsWith("R")).
+            max((p, p2) -> p.salary - p2.salary);
     }
 
     static List<Person> fillData() {

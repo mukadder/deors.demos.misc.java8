@@ -6,6 +6,12 @@ import java.util.Optional;
 
 public class NextPaymentJava8 {
 
+    static String result;
+
+    private NextPaymentJava8() {
+        super();
+    }
+
     public static void main(String[] args) {
 
         MortgagePlanJava8 plan = new MortgagePlanJava8();
@@ -21,9 +27,10 @@ public class NextPaymentJava8 {
             filter((d) -> d.isAfter(today)).sorted().findFirst();
 
         if (nextPayment.isPresent()) {
-            System.out.println("The next payment is due for: " + nextPayment.get());
+            result = "The next payment is due for: " + nextPayment.get();
         } else {
-            System.out.println("No more payments expected");
+            result = "No more payments expected";
         }
+        System.out.println(result);
     }
 }

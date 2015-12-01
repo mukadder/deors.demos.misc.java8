@@ -14,6 +14,8 @@ public class SumProductCalculationJava7
 
     private int threshold = 10;
 
+    static Integer result;
+
     List<Pair<Integer, Integer>> pairList;
 
     public SumProductCalculationJava7(List<Pair<Integer, Integer>> pairList) {
@@ -130,7 +132,7 @@ public class SumProductCalculationJava7
 
         SumProductCalculationJava7 theTask = new SumProductCalculationJava7(thePairList);
         ForkJoinPool thePool = new ForkJoinPool();
-        Integer result = thePool.invoke(theTask);
+        result = thePool.invoke(theTask);
 
         System.out.printf("the final result is %s\n", result);
     }
