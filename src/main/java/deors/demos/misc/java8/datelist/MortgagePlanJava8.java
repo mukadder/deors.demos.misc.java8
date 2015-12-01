@@ -1,9 +1,9 @@
 package deors.demos.misc.java8.datelist;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.time.LocalDate;
 
 public class MortgagePlanJava8 {
 

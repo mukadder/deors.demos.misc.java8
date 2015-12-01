@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-public class NextPaymentJava7 {
+public final class NextPaymentJava7 {
 
     static String result;
 

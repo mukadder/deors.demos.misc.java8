@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.javatuples.Pair;
 
-public class SumProductCalculationJava8 {
+public final class SumProductCalculationJava8 {
 
     static Integer result;
 
@@ -34,6 +34,6 @@ public class SumProductCalculationJava8 {
         result = thePairList.parallelStream().
             mapToInt(p -> p.getValue0() * p.getValue1()).sum();
 
-        System.out.printf("the final result is %s\n", result);
+        System.out.printf("the final result is %s%n", result);
     }
 }

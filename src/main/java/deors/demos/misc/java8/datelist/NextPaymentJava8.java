@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Optional;
 
-public class NextPaymentJava8 {
+public final class NextPaymentJava8 {
 
     static String result;
 
@@ -24,7 +24,7 @@ public class NextPaymentJava8 {
         LocalDate today = LocalDate.now();
 //        LocalDate today = LocalDate.of(2020, 1, 1);
         Optional<LocalDate> nextPayment = plan.getPlanDates().stream().
-            filter((d) -> d.isAfter(today)).sorted().findFirst();
+            filter(d -> d.isAfter(today)).sorted().findFirst();
 
         if (nextPayment.isPresent()) {
             result = "The next payment is due for: " + nextPayment.get();

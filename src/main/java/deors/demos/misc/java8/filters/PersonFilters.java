@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import deors.demos.misc.java8.filters.Person.Gender;
 import deors.demos.misc.java8.filters.Person.Region;
 
-public class PersonFilters {
+public final class PersonFilters {
 
     static String result1;
     static String result2;
@@ -48,12 +48,12 @@ public class PersonFilters {
         System.out.println("select the largest salary for people in LATAM with last name starting with R");
         persons.stream().
             filter(p -> p.region == Region.LATAM).
-            filter(p -> p.last.startsWith("R")).
+            filter(p -> p.last.charAt(0) == 'R').
             max((p, p2) -> p.salary - p2.salary).
             ifPresent(System.out::println);
         result3 = persons.stream().
             filter(p -> p.region == Region.LATAM).
-            filter(p -> p.last.startsWith("R")).
+            filter(p -> p.last.charAt(0) == 'R').
             max((p, p2) -> p.salary - p2.salary);
     }
 
